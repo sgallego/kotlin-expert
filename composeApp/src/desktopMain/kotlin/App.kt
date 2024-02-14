@@ -13,11 +13,14 @@ import androidx.compose.runtime.remember
 fun App() {
     val text = remember { mutableStateOf("") }
     val buttonEnabled = text.value.isNotEmpty()
+    fun buildMessage(text: String): String{
+        return "Hello $text"
+    }
 
     MaterialTheme {
         Column {
             TextField(value = text.value, onValueChange = { newText -> text.value = newText })
-            Text(text = if(text.value.isBlank()){ "" }else{ "Hello ${text.value}" })
+            Text(text = buildMessage(text.value))
             Button(onClick = {
                 text.value = ""
             }, enabled = buttonEnabled) {
