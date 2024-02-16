@@ -12,15 +12,17 @@ data class Note(
 }
 
 
-val list = listOf(
-    Note("Title 1", "Description 1", Note.Type.TEXT),
-    Note("Title 2", "Description 2", Note.Type.AUDIO),
-    Note("Title 3", "Description 3", Note.Type.TEXT),
-    Note("Title 4", "Description 4", Note.Type.AUDIO),
-    Note("Title 5", "Description 5", Note.Type.TEXT),
-    Note("Title 6", "Description 6", Note.Type.TEXT),
-    Note("Title 7", "Description 7", Note.Type.AUDIO),
-    Note("Title 8", "Description 8", Note.Type.TEXT),
-    Note("Title 9", "Description 9", Note.Type.TEXT),
-    Note("Title 10", "Description 10", Note.Type.TEXT),
-)
+
+fun getNotes(): List<Note>{
+
+    val notes = mutableListOf<Note>()
+    for(i in 1..10){
+        notes.add(Note(
+            "Title $i",
+            "Description $i",
+            if(i%3 ==0) Note.Type.AUDIO else Note.Type.TEXT
+        ))
+    }
+    return notes
+
+}
