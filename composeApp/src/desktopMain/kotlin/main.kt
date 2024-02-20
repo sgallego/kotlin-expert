@@ -14,8 +14,7 @@ fun main() {
 }
 
 class AppState(){
-    val text = mutableStateOf("")
-    fun buttonEnabled() = text.value.isNotEmpty()
+    val notes = mutableStateOf(getNotes())
 }
 
 @Preview
