@@ -13,16 +13,18 @@ data class Note(
 
 
 
-fun getNotes(): List<Note>{
+fun getNotes(callback: (List<Note>) -> Unit){
 
-    val notes = mutableListOf<Note>()
-    for(i in 1..10){
-        notes.add(Note(
-            "Title $i",
-            "Description $i",
-            if(i%3 ==0) Note.Type.AUDIO else Note.Type.TEXT
-        ))
+    Thread.sleep(2000)
+
+    val notes = (0..10).map{
+        Note(
+            "Title $it",
+            "Description $it",
+            if(it%3 ==0) Note.Type.AUDIO else Note.Type.TEXT
+        )
     }
-    return notes
+    callback(notes)
+
 
 }
