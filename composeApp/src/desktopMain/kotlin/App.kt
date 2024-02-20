@@ -15,8 +15,11 @@ import androidx.compose.ui.unit.dp
 @Preview
 fun App(appState: AppState) {
 
-    LaunchedEffect(true){
-        appState.loadNotes()
+    val notes = appState.state.value.notes
+    if(notes == null) {
+        LaunchedEffect(true) {
+            appState.loadNotes()
+        }
     }
 
 
@@ -28,7 +31,9 @@ fun App(appState: AppState) {
             if(appState.state.value.loading) {
                 CircularProgressIndicator()
             }
-            NotesList(appState.state.value.notes)
+            if(notes != null) {
+                NotesList(notes)
+            }
         }
 
     }
