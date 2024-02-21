@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 @Preview
-fun App(appState: AppState): Unit = with(appState) {
+fun App(): Unit = with(AppState) {
 
 
         if (state.value.notes == null) {
@@ -21,7 +21,6 @@ fun App(appState: AppState): Unit = with(appState) {
                 loadNotes()
             }
         }
-
 
 
         MaterialTheme {
