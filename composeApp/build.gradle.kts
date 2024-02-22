@@ -21,6 +21,7 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(compose.materialIconsExtended)
+            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0")
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
