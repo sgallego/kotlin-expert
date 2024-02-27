@@ -7,6 +7,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Mic
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -15,23 +17,22 @@ import androidx.compose.ui.unit.dp
 @Preview
 fun App(): Unit = with(AppState) {
 
+    val state by state.collectAsState()
 
-        if (state.notes == null) {
-            LaunchedEffect(true) {
-                loadNotes(this)
-            }
-        }
+    LaunchedEffect(true) {
+        loadNotes(this)
+    }
 
 
-        MaterialTheme {
-            Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) {
+    MaterialTheme {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
                 if (state.loading) {
                     CircularProgressIndicator()
                 }
-                state.notes?.let {
+                state.notes.let {
                     NotesList(it)
                 }
             }
@@ -43,7 +44,7 @@ fun App(): Unit = with(AppState) {
 @Composable
 private fun NotesList(notes: List<Note>){
     LazyColumn(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         items(notes) { note ->
