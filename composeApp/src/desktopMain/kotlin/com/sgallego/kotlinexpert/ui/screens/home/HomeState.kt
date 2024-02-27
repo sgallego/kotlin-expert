@@ -1,9 +1,11 @@
-package com.sgallego.kotlinexpert
+package com.sgallego.kotlinexpert.ui.screens.home
+import com.sgallego.kotlinexpert.data.Note
+import com.sgallego.kotlinexpert.data.getNotes
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-object AppState{
+object HomeState{
     private val _state = MutableStateFlow(UiState())
     val state = _state.asStateFlow()
 

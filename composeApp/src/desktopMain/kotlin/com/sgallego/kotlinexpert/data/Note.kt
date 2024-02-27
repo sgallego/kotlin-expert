@@ -1,4 +1,4 @@
-package com.sgallego.kotlinexpert
+package com.sgallego.kotlinexpert.data
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
