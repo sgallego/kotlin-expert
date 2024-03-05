@@ -1,7 +1,6 @@
 package com.sgallego.kotlinexpert.data
 
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 data class Note(
@@ -13,11 +12,12 @@ data class Note(
     enum class Type {
         TEXT, AUDIO
     }
+    companion object
 
 }
 
 
-suspend fun getNotes(): Flow<List<Note>> = flow {
+val Note.Companion.fakeNotes get() = flow {
     delay(2000)
     val notes = (0..10).map {
         Note(
