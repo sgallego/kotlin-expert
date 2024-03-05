@@ -27,18 +27,20 @@ private fun FilterActions(onFilterClick:  (Filter) -> Unit) {
         )
         DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
 
-            listOf<Pair<Filter, String>>(
-                Filter.All to "All",
-                Filter.ByType(Note.Type.TEXT) to "Text",
-                Filter.ByType(Note.Type.AUDIO) to "Audio",
-            ).map { (filter, label) ->
+            @Composable
+            infix fun Filter.ToMenuItem(label: String){
                 DropdownMenuItem(onClick = {
                     expanded = false
-                    onFilterClick(filter)
+                    onFilterClick(this)
                 }) {
                     Text(label)
                 }
             }
+
+            Filter.All ToMenuItem "All"
+            Filter.ByType(Note.Type.TEXT) ToMenuItem  "Text"
+            Filter.ByType(Note.Type.AUDIO) ToMenuItem  "Audio"
+
         }
     }
 }
