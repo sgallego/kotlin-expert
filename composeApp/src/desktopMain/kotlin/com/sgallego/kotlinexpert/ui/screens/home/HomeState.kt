@@ -1,7 +1,9 @@
 package com.sgallego.kotlinexpert.ui.screens.home
 import com.sgallego.kotlinexpert.data.Filter
 import com.sgallego.kotlinexpert.data.Note
-import com.sgallego.kotlinexpert.data.fakeNotes
+import com.sgallego.kotlinexpert.data.remote.notesClient
+import io.ktor.client.call.*
+import io.ktor.client.request.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,10 +15,9 @@ object HomeState{
 
     fun loadNotes(coroutineScope: CoroutineScope) {
         coroutineScope.launch {
-            _state.emit(UiState(loading = true))
-            Note.fakeNotes.collect{
-                _state.emit(UiState(notes = it))
-            }
+            _state.value = UiState(loading = true)
+            val response = notesClient.request("http://localhost:8080/notes")
+            _state.value = UiState(notes = response.body())
         }
     }
 
