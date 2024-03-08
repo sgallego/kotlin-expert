@@ -10,22 +10,16 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.sgallego.kotlinexpert.data.Note
 
 @Composable
 @Preview
-fun Home(onCreateClick: () -> Unit): Unit = with(HomeState) {
-
-    val state by state.collectAsState()
-
-    LaunchedEffect(true) {
-        loadNotes(this)
-    }
-
+fun Home(vm: HomeViewModel, onNoteClick: (noteId: Long) -> Unit){
 
     MaterialTheme {
         Scaffold(
-            topBar = { TopBar(::onFilterClick) },
-            floatingActionButton = { FloatingActionButton(onClick = onCreateClick ){
+            topBar = { TopBar(vm::onFilterClick) },
+            floatingActionButton = { FloatingActionButton(onClick = { onNoteClick(Note.NEW_NOTE) } ){
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add note")
             } }
         ) { padding ->
@@ -33,11 +27,14 @@ fun Home(onCreateClick: () -> Unit): Unit = with(HomeState) {
                 modifier = Modifier.fillMaxSize().padding(padding),
                 contentAlignment = Alignment.Center
             ) {
-                if (state.loading) {
+                if (vm.state.loading) {
                     CircularProgressIndicator()
                 }
-                state.filteredNotes?.let {
-                    NotesList(it)
+                vm.state.filteredNotes?.let { notes ->
+                    NotesList(
+                        notes = notes,
+                        onNoteClick = {onNoteClick(it.id) }
+                    )
                 }
             }
         }
