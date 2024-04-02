@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 
 
 include(":common")
-include(":composeApp")
+include(":desktop")
