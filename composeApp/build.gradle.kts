@@ -5,9 +5,8 @@ val ktor_version: String by project
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    
     alias(libs.plugins.jetbrainsCompose)
-    kotlin("plugin.serialization") version "1.9.22"
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
