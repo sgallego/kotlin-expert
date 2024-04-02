@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 include(":common")
 include(":desktop")
+include(":web")

@@ -10,14 +10,19 @@ plugins {
 }
 
 kotlin {
-    jvm("desktop")
+    jvm("desktop"){
+        jvmToolchain(11)
+    }
+    js(IR){
+        browser()
+    }
     
     sourceSets {
         val commonMain by getting
         val commonTest by getting
         val desktopMain by getting
-        
-        commonMain.dependencies {
+
+        desktopMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -30,10 +35,15 @@ kotlin {
             implementation("io.ktor:ktor-client-okhttp:$ktor_version")
             implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
             implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
-        }
-        desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
         }
+        val jsMain by getting {
+            dependencies {
+                implementation(compose.html.core)
+                implementation(compose.runtime)
+            }
+        }
+        val jsTest by getting
     }
 }
 
