@@ -8,7 +8,7 @@ import com.sgallego.kotlinexpert.ui.App
 
 fun main() {
     application {
-        Window(onCloseRequest = ::exitApplication, title = "KotlinExpertNotesDemo") {
+        Window(onCloseRequest = ::exitApplication, title = getAppTitle()) {
             App()
         }
     }

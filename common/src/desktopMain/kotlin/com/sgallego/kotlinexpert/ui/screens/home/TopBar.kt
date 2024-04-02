@@ -6,11 +6,12 @@ import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.runtime.*
 import com.sgallego.kotlinexpert.data.Filter
 import com.sgallego.kotlinexpert.data.Note
+import com.sgallego.kotlinexpert.getAppTitle
 
 @Composable
 fun TopBar(onFilterClick:  (Filter) -> Unit) {
     TopAppBar(
-        title = { Text("My Notes") },
+        title = { Text(getAppTitle()) },
         actions = {
             FilterActions(onFilterClick)
         }
