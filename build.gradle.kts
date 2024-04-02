@@ -1,6 +1,4 @@
 
-//packageName = "com.apptitudecode.kenotes"
-//packageVersion = "1.0.0"
 
 allprojects {
     repositories {
