@@ -1,6 +1,7 @@
 package ui.theme
 
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.keywords.auto
 
 object AppStyleSheet: StyleSheet() {
 
@@ -38,6 +39,7 @@ object AppStyleSheet: StyleSheet() {
         alignItems(AlignItems.Center)
         padding(16.px)
         backgroundColor(Color("#6200EE"))
+        gap(16.px)
     }
 
     val topBarTitle by style {
@@ -45,6 +47,7 @@ object AppStyleSheet: StyleSheet() {
         margin(0.px)
         fontSize(25.px)
         fontWeight("normal")
+        property("margin-right", auto)
     }
 
     val filtersAction by style {
@@ -106,4 +109,12 @@ object AppStyleSheet: StyleSheet() {
         fontSize(20.px)
         fontWeight("normal")
     }
+
+    val detailInput by style {
+        padding(16.px)
+        border(1.px, LineStyle.Solid, Color("#ccc"))
+        borderRadius(4.px)
+    }
+
+
 }
