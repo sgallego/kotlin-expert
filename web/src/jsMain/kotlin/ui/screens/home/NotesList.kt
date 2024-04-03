@@ -6,6 +6,7 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
+import ui.common.Icon
 import ui.theme.AppStyleSheet
 
 @Composable
@@ -38,7 +39,10 @@ fun NoteCard(note: Note, onNoteClick: (Note) -> Unit){
                 }
             ) { Text(note.title) }
             if(note.type == Note.Type.AUDIO){
-                Span { Text("🎤") }
+                Icon(
+                    iconName = "mic",
+                    attrs = null
+                )
             }
         }
 

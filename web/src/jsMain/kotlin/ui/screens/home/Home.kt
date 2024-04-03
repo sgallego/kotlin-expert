@@ -6,6 +6,7 @@ import com.sgallego.kotlinexpert.ui.screens.home.HomeViewModel
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
+import ui.common.Icon
 import ui.theme.AppStyleSheet
 
 @Composable
@@ -40,7 +41,10 @@ fun Home(vm: HomeViewModel, onNoteClick: (noteId: Long) -> Unit){
                 onNoteClick(Note.NEW_NOTE)
             }
         }) {
-            Text("+")
+            Icon(
+                iconName = "add",
+                attrs = null
+            )
         }
     }
 
