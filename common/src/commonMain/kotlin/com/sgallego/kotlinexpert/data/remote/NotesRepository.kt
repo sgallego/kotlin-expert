@@ -19,7 +19,7 @@ object NotesRepository {
         return response.body()
     }
 
-    suspend fun getById(id: Long): Note{
+    suspend fun getById(id: Long): Note {
         val response = notesClient.request("$NOTES_URL/$id")
         return response.body()
     }
