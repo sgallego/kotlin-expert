@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 include(":common")
 include(":desktop")
 include(":web")
+include(":android")
