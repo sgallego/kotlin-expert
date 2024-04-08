@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             MaterialTheme {
-                Text("Hello World")
+                Text("Hello ${getPlatformName()}")
             }
         }
 
