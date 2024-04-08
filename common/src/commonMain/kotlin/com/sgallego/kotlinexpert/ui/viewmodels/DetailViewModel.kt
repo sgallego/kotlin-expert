@@ -1,4 +1,4 @@
-package com.sgallego.kotlinexpert.ui.screens.detail
+package com.sgallego.kotlinexpert.ui.viewmodels
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

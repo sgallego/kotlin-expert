@@ -2,9 +2,9 @@ package com.sgallego.kotlinexpert.ui
 
 import androidx.compose.runtime.*
 import com.sgallego.kotlinexpert.ui.screens.detail.Detail
-import com.sgallego.kotlinexpert.ui.screens.detail.DetailViewModel
+import com.sgallego.kotlinexpert.ui.viewmodels.DetailViewModel
 import com.sgallego.kotlinexpert.ui.screens.home.Home
-import com.sgallego.kotlinexpert.ui.screens.home.HomeViewModel
+import com.sgallego.kotlinexpert.ui.viewmodels.HomeViewModel
 
 
 @Composable

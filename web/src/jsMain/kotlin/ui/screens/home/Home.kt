@@ -2,7 +2,7 @@ package ui.screens.home
 
 import androidx.compose.runtime.Composable
 import com.sgallego.kotlinexpert.data.Note
-import com.sgallego.kotlinexpert.ui.screens.home.HomeViewModel
+import com.sgallego.kotlinexpert.ui.viewmodels.HomeViewModel
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text

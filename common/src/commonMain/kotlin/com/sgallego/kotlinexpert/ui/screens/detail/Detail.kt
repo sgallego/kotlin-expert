@@ -14,6 +14,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.sgallego.kotlinexpert.data.Note
+import com.sgallego.kotlinexpert.ui.viewmodels.DetailViewModel
 
 @Composable
 fun Detail(vm: DetailViewModel, id: Long, onClose: () -> Unit) {

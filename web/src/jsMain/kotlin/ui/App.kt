@@ -2,8 +2,8 @@ package ui
 
 import androidx.compose.runtime.*
 import com.sgallego.kotlinexpert.ui.Route
-import com.sgallego.kotlinexpert.ui.screens.detail.DetailViewModel
-import com.sgallego.kotlinexpert.ui.screens.home.HomeViewModel
+import com.sgallego.kotlinexpert.ui.viewmodels.DetailViewModel
+import com.sgallego.kotlinexpert.ui.viewmodels.HomeViewModel
 import ui.screens.detail.Detail
 import ui.screens.home.Home
 
