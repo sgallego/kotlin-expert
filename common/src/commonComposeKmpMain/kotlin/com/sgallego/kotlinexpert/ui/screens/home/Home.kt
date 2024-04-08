@@ -13,7 +13,7 @@ import com.sgallego.kotlinexpert.data.Note
 import com.sgallego.kotlinexpert.ui.viewmodels.HomeViewModel
 
 @Composable
-fun Home(vm: HomeViewModel, onNoteClick: (noteId: Long) -> Unit){
+actual fun Home(vm: HomeViewModel, onNoteClick: (noteId: Long) -> Unit){
 
     MaterialTheme {
         Scaffold(

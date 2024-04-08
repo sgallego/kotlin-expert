@@ -1,10 +1,10 @@
 
+import com.sgallego.kotlinexpert.ui.App
 import kotlinx.browser.document
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
-import ui.App
-import ui.theme.AppStyleSheet
+import com.sgallego.kotlinexpert.ui.theme.AppStyleSheet
 
 fun main() {
     composeSample()

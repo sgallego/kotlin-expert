@@ -1,4 +1,4 @@
-package ui.common
+package com.sgallego.kotlinexpert.ui.common
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.attributes.AttrsScope

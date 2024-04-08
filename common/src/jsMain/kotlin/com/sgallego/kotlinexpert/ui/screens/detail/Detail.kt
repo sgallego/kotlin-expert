@@ -1,4 +1,4 @@
-package ui.screens.detail
+package com.sgallego.kotlinexpert.ui.screens.detail
 
 import androidx.compose.runtime.*
 import com.sgallego.kotlinexpert.data.Note
@@ -7,11 +7,11 @@ import org.jetbrains.compose.web.attributes.placeholder
 import org.jetbrains.compose.web.attributes.selected
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
-import ui.common.Icon
-import ui.theme.AppStyleSheet
+import com.sgallego.kotlinexpert.ui.common.Icon
+import com.sgallego.kotlinexpert.ui.theme.AppStyleSheet
 
 @Composable
-fun Detail(vm: DetailViewModel, id: Long, onClose: () -> Unit) {
+actual fun Detail(vm: DetailViewModel, id: Long, onClose: () -> Unit) {
 
     val note = vm.state.note
 

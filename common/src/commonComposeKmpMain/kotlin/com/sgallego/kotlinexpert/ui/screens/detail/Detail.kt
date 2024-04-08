@@ -17,7 +17,7 @@ import com.sgallego.kotlinexpert.data.Note
 import com.sgallego.kotlinexpert.ui.viewmodels.DetailViewModel
 
 @Composable
-fun Detail(vm: DetailViewModel, id: Long, onClose: () -> Unit) {
+actual fun Detail(vm: DetailViewModel, id: Long, onClose: () -> Unit) {
 
     val note = vm.state.note
 

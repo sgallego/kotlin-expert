@@ -1,4 +1,4 @@
-package ui.screens.home
+package com.sgallego.kotlinexpert.ui.screens.home
 
 import androidx.compose.runtime.*
 import com.sgallego.kotlinexpert.data.Filter
@@ -8,8 +8,8 @@ import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
-import ui.common.Icon
-import ui.theme.AppStyleSheet
+import com.sgallego.kotlinexpert.ui.common.Icon
+import com.sgallego.kotlinexpert.ui.theme.AppStyleSheet
 
 @Composable
 fun TopBar(onFilterClick:  (Filter) -> Unit) {

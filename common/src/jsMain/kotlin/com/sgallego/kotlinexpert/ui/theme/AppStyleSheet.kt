@@ -1,4 +1,4 @@
-package ui.theme
+package com.sgallego.kotlinexpert.ui.theme
 
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto

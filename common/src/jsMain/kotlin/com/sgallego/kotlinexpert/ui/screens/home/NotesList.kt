@@ -1,4 +1,4 @@
-package ui.screens.home
+package com.sgallego.kotlinexpert.ui.screens.home
 
 import androidx.compose.runtime.Composable
 import com.sgallego.kotlinexpert.data.Note
@@ -6,8 +6,8 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
-import ui.common.Icon
-import ui.theme.AppStyleSheet
+import com.sgallego.kotlinexpert.ui.common.Icon
+import com.sgallego.kotlinexpert.ui.theme.AppStyleSheet
 
 @Composable
 fun NotesList(notes: List<Note>, onNoteClick: (Note) -> Unit){
