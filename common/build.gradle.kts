@@ -28,6 +28,7 @@ kotlin {
                 @OptIn(ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
                 implementation(compose.materialIconsExtended)
+                implementation(libs.voyagerNavigator)
 
                 implementation("io.ktor:ktor-client-core:$ktor_version")
                 implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
