@@ -1,4 +1,5 @@
 import org.jetbrains.compose.ExperimentalComposeLibrary
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 val ktor_version: String by project
 
@@ -10,6 +11,8 @@ plugins {
 }
 
 kotlin {
+    @OptIn(ExperimentalKotlinGradlePluginApi::class)
+    targetHierarchy.default()
     androidTarget()
     jvm("desktop"){
         jvmToolchain(11)
@@ -17,6 +20,20 @@ kotlin {
     js(IR){
         browser()
     }
+
+    listOf(
+        iosArm64(),
+        iosX64(),
+        iosSimulatorArm64(),
+    ).forEach {
+        it.binaries.framework {
+            baseName = "common"
+            linkerOpts("-framework", "CoreGraphics")
+            linkerOpts("-framework", "CoreText")
+            linkerOpts("-framework", "Metal")
+        }
+    }
+
     
     sourceSets {
         val commonMain by getting {
@@ -73,6 +90,8 @@ kotlin {
             }
         }
         val jsTest by getting
+
+        val iosMain by getting
     }
 }
 
