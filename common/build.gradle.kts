@@ -29,6 +29,7 @@ kotlin {
                 implementation(compose.components.resources)
                 implementation(compose.materialIconsExtended)
                 implementation(libs.voyagerNavigator)
+                implementation(libs.voyagerScreenModel)
 
                 implementation("io.ktor:ktor-client-core:$ktor_version")
                 implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
@@ -47,7 +48,7 @@ kotlin {
             dependsOn(commonComposeKmpMain)
             dependencies {
 
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.8.0")
                 implementation("io.ktor:ktor-client-okhttp:$ktor_version")
 
                 implementation(compose.desktop.currentOs)
