@@ -41,5 +41,4 @@ dependencies {
     implementation(project(":common"))
     implementation(libs.activity.compose)
     implementation(libs.appcompat)
-    implementation(libs.material3)
 }
