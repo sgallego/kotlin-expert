@@ -10,14 +10,21 @@ import common
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text(Platform_iosKt.getPlatformName())
-        }
-        .padding()
+        ComposeView()
     }
+}
+
+struct ComposeView: UIViewControllerRepresentable{
+
+    func makeUIViewController(context: Self.Context) -> UIViewController{
+        MainKt.MainViewController()
+    }
+    
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    
+    }
+    
 }
 
 #Preview {

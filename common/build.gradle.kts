@@ -91,7 +91,12 @@ kotlin {
         }
         val jsTest by getting
 
-        val iosMain by getting
+        val iosMain by getting{
+            dependsOn(commonComposeKmpMain)
+            dependencies {
+                implementation("io.ktor:ktor-client-darwin:$ktor_version")
+            }
+        }
     }
 }
 
